@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-acedemo-dev-141516-authRole",
+      "UnauthRoleArn": "arn:aws:iam::062890900101:role/amplify-acedemo-dev-141516-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::062890900101:role/amplify-acedemo-dev-141516-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-acedemo-dev-141516-deployment",
+      "UnauthRoleName": "amplify-acedemo-dev-141516-unauthRole",
+      "StackName": "amplify-acedemo-dev-141516",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:062890900101:stack/amplify-acedemo-dev-141516/4e5a8920-1fb2-11ee-a956-02ab3851da64",
+      "AmplifyAppId": "dx6vwnc4bqqqb",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {},
+        "true": {},
+        "acedemo": {}
+      },
+      "function": {
+        "acedemo46b9fae0": {
+          "deploymentBucketName": "amplify-acedemo-dev-141516-deployment",
+          "s3Key": "amplify-builds/acedemo46b9fae0-742f614e6866386d7550-build.zip"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dx6vwnc4bqqqb",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}

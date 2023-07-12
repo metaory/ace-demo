@@ -1,0 +1,21 @@
+{
+    "appName": "acedemo",
+    "roleName": "pinpointLambdaRolec642d319",
+    "cloudformationPolicyName": "cloudformationPolicyc642d319",
+    "cloudWatchPolicyName": "cloudWatchPolicyc642d319",
+    "pinpointPolicyName": "pinpointPolicyc642d319",
+    "authPolicyName": "pinpoint_amplify_c642d319",
+    "unauthPolicyName": "pinpoint_amplify_c642d319",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

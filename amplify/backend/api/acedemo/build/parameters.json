@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "acedemo",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-acedemo-dev-141516-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/8369b0785c61e9b11ffc5192db1d30ebffaf12db"
+}
