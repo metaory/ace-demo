@@ -1,9 +1,22 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import { Amplify } from 'aws-amplify'
-import awsExports from './aws-exports'
-Amplify.configure(awsExports)
+import { createApp } from "vue";
+import App from "./App.vue";
+import { Amplify, API } from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
-createApp(App).mount('#app')
+console.log(">>>>>>>");
+function getData() {
+  const apiName = "aceapi";
+  const path = "/items/foo";
+  const myInit = {
+    headers: {}, // OPTIONAL
+  };
+  return API.get(apiName, path, myInit);
+}
+
+const response = await getData();
+console.log("response:", response);
+
+createApp(App).mount("#app");
