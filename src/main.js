@@ -16,7 +16,6 @@ function getData() {
   return API.get(apiName, path, myInit);
 }
 
-const response = await getData();
-console.log("response:", response);
+getData().then(console.log).catch(console.error);
 
 createApp(App).mount("#app");
