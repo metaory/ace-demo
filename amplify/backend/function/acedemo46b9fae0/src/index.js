@@ -7,17 +7,17 @@ const chance = new Chance();
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
 const rndArray = (length = 7) =>
-	Array.from({ length }).fill(() => Math.floor(Math.random() * 100));
+	Array.from({ length }).map(() => Math.floor(Math.random() * 100));
 
 // [ ['Blueberry', 44], ['Strawberry', 23] ]
 
-const makeResponse = (body) => ({
+const makeResponse = (data) => ({
 	statusCode: 200,
 	headers: {
 		"Access-Control-Allow-Origin": "*",
 		"Access-Control-Allow-Headers": "*",
 	},
-	body,
+	body: JSON.stringify(data),
 });
 
 const handler = async (event) => {
