@@ -6,6 +6,7 @@ const bar = ref([
   ['Blueberry', 44],
   ['Strawberry', 23]
 ])
+const chartData = ref([])
 
 function getData() {
   const apiName = 'aceapi'
@@ -20,6 +21,8 @@ getData()
   .then((res) => {
     console.log('@>', res)
     foobar.value = res
+    console.log('!', res.pieChart)
+    chartData.value = res.pieChart
   })
   .catch(console.error)
 onMounted(() => {
@@ -28,7 +31,7 @@ onMounted(() => {
 </script>
 <template>
   <h2>{{ foobar }}</h2>
-  <pie-chart :data="bar"></pie-chart>
+  <pie-chart :data="chartData"></pie-chart>
   <pie-chart
     :data="[
       ['Blueberry', 44],
