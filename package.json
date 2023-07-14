@@ -12,7 +12,11 @@
   "dependencies": {
     "@aws-amplify/ui-vue": "^3.1.20",
     "aws-amplify": "^5.3.3",
-    "vue": "^3.3.4"
+    "chance": "^1.1.11",
+    "chart.js": "^4.3.0",
+    "vue": "^3.3.4",
+    "vue-chartjs": "^5.2.0",
+    "vue-chartkick": "^1.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
