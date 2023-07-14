@@ -9,7 +9,7 @@ const headers = {
   'Access-Control-Allow-Headers': '*'
 }
 
-const rnd = (max) => Math.ceil(Math.random() * max)
+const rnd = (max) => Math.floor(Math.random() * max) + 2
 
 const rndArray = (length = 7) => Array.from({ length }).map(() => rnd(100))
 
