@@ -4,5 +4,10 @@
 
 "@types/aws-lambda@^8.10.92":
   version "8.10.119"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.119.tgz#aaf010a9c892b3e29a290e5c49bfe8bcec82c455"
+  resolved "https://registry.npmjs.org/@types/aws-lambda/-/aws-lambda-8.10.119.tgz"
   integrity sha512-Vqm22aZrCvCd6I5g1SvpW151jfqwTzEZ7XJ3yZ6xaZG31nUEOEyzzVImjRcsN8Wi/QyPxId/x8GTtgIbsy8kEw==
+
+chance@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.npmjs.org/chance/-/chance-1.1.11.tgz"
+  integrity sha512-kqTg3WWywappJPqtgrdvbA380VoXO2eu9VCV895JgbyHsaErXdyHK9LOZ911OvAk6L0obK7kDk9CGs8+oBawVA==
