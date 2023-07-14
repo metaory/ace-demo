@@ -1,6 +1,6 @@
 <script setup>
 import { API } from 'aws-amplify'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const chartData = ref([])
 const picked = ref('animal')
@@ -22,10 +22,7 @@ function onChange() {
   loadData()
 }
 
-onMounted(() => {
-  console.log('MOUNTED')
-  loadData()
-})
+loadData()
 </script>
 
 <template>

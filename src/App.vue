@@ -1,19 +1,15 @@
 <script setup>
 import { Authenticator } from '@aws-amplify/ui-vue'
 import '@aws-amplify/ui-vue/styles.css'
+import HeaderView from './components/HeaderView.vue'
 import ChartsView from './components/ChartsView.vue'
 </script>
 
 <template>
   <authenticator>
     <template v-slot="{ user, signOut }">
-      <main>
-        <header>
-          <h1>Hello {{ user.username }}!</h1>
-          <button @click="signOut">Sign Out</button>
-        </header>
-        <ChartsView />
-      </main>
+      <HeaderView :user="user" :signOut="signOut" />
+      <ChartsView />
     </template>
   </authenticator>
 </template>
