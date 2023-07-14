@@ -1,41 +1,66 @@
 <script setup>
 import { API } from 'aws-amplify'
 import { ref, onMounted } from 'vue'
-const foobar = ref('def')
-const bar = ref([
-  ['Blueberry', 44],
-  ['Strawberry', 23]
-])
-const chartData = ref([])
 
-function getData() {
+const chartData = ref([])
+const picked = ref('animal')
+
+function loadData() {
   const apiName = 'aceapi'
-  const path = '/items/foo'
-  const myInit = {
-    headers: {} // OPTIONAL
-  }
-  return API.get(apiName, path, myInit)
+  const path = `/items?type=${picked.value}`
+  console.log('path:', path)
+  API.get(apiName, path)
+    .then((res) => {
+      console.log('@>', res)
+      chartData.value = res.pieChart
+    })
+    .catch(console.error)
 }
-// getData().then(console.log).catch(console.error)
-getData()
-  .then((res) => {
-    console.log('@>', res)
-    foobar.value = res
-    console.log('!', res.pieChart)
-    chartData.value = res.pieChart
-  })
-  .catch(console.error)
+
+function onChange() {
+  console.log('ON CHANGE', picked.value)
+  loadData()
+}
+
 onMounted(() => {
   console.log('MOUNTED')
+  loadData()
 })
 </script>
+
 <template>
-  <h2>{{ foobar }}</h2>
-  <pie-chart :data="chartData"></pie-chart>
-  <pie-chart
-    :data="[
-      ['Blueberry', 44],
-      ['Strawberry', 23]
-    ]"
-  ></pie-chart>
+  <main>
+    <div>
+      <button @click="loadData">reload</button>
+      <div>Picked: {{ picked }}</div>
+
+      <input
+        v-on:change="onChange"
+        type="radio"
+        id="animal"
+        value="animal"
+        v-model="picked"
+        :checked="true"
+      />
+      <label for="animal">Animals</label>
+
+      <input
+        v-on:change="onChange"
+        type="radio"
+        id="profession"
+        value="profession"
+        v-model="picked"
+        :checked="false"
+      />
+      <label for="city">Profession</label>
+    </div>
+
+    <pie-chart :data="chartData"></pie-chart>
+  </main>
 </template>
+
+<style scoped>
+main {
+  display: grid;
+}
+</style>

@@ -12,3 +12,10 @@ console.log("data:", data);
 const rnd = Math.floor(Math.random() * 10);
 
 console.log("rnd:", rnd);
+
+const event = { queryStringParameters: { type: "foo" } };
+// const event = { queryStringParameters: null };
+
+const { queryStringParameters } = event;
+const { type } = queryStringParameters ?? { type: "xx" };
+console.log("type:", type);

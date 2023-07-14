@@ -21,11 +21,14 @@ const makeResponse = (data) => ({
 
 exports.handler = async (event) => {
 	console.log(`EVENT: ${JSON.stringify(event)}`);
+	const { queryStringParameters } = event;
+	const { type } = queryStringParameters ?? { type: "animal" };
+
 	const lineChart = rndArray();
 	const radar = [rndArray(), rndArray()];
 
 	const pieChart = Array.from({ length: rnd(6) }).map(() => [
-		chance.first(),
+		chance[type](),
 		rnd(100),
 	]);
 
