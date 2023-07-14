@@ -9,9 +9,9 @@ const headers = {
   'Access-Control-Allow-Headers': '*'
 }
 
-const rnd = (max, min = 3) => Math.floor(Math.random() * max - min) + min
+const rnd = (max, min) => Math.floor(Math.random() * max - min) + min
 
-const rndArray = (length = 7) => Array.from({ length }).map(() => rnd(100))
+const rndArray = (length = 7) => Array.from({ length }).map(() => rnd(100, 10))
 
 const makeResponse = (data) => ({
   statusCode: 200,
@@ -27,9 +27,8 @@ exports.handler = async (event) => {
   const lineChart = rndArray()
   const radar = [rndArray(), rndArray()]
 
-  const length = rnd(6)
-  console.log('length:', length)
-  const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100)])
+  const length = rnd(6, 3)
+  const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100, 10)])
 
   return makeResponse({ lineChart, radar, pieChart })
 }
