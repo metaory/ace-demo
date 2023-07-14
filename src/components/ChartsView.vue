@@ -2,6 +2,10 @@
 import { API } from 'aws-amplify'
 import { ref, onMounted } from 'vue'
 const foobar = ref('def')
+const bar = ref([
+  ['Blueberry', 44],
+  ['Strawberry', 23]
+])
 
 function getData() {
   const apiName = 'aceapi'
@@ -24,6 +28,7 @@ onMounted(() => {
 </script>
 <template>
   <h2>{{ foobar }}</h2>
+  <pie-chart :data="bar"></pie-chart>
   <pie-chart
     :data="[
       ['Blueberry', 44],
