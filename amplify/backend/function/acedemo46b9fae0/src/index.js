@@ -27,7 +27,8 @@ exports.handler = async (event) => {
   const lineChart = rndArray()
   const radar = [rndArray(), rndArray()]
 
-  const pieChart = Array.from({ length: rnd(6) }).map(() => [chance[type](), rnd(100)])
+  const length = rnd(6)
+  const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100)])
 
   return makeResponse({ lineChart, radar, pieChart })
 }

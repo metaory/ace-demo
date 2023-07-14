@@ -16,3 +16,10 @@ console.log('type:', type)
 const rnd = (max, min = 3) => Math.floor(Math.random() * max) + min
 
 console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))
+console.log(rnd(10))

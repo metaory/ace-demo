@@ -55,7 +55,7 @@ onMounted(() => {
       <label for="city">Profession</label>
     </div>
 
-    <pie-chart :data="chartData"></pie-chart>
+    <pie-chart v-if="chartData" :data="chartData"></pie-chart>
   </main>
 </template>
 
