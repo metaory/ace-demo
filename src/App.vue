@@ -1,8 +1,8 @@
 <script setup>
-import { Authenticator } from '@aws-amplify/ui-vue'
-import '@aws-amplify/ui-vue/styles.css'
-import HeaderView from './components/HeaderView.vue'
-import ChartsView from './components/ChartsView.vue'
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+import HeaderView from "./components/HeaderView.vue";
+import ChartsView from "./components/ChartsView.vue";
 </script>
 
 <template>
