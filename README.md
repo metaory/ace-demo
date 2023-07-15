@@ -37,3 +37,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## License
+
+[MIT](LICENSE)
