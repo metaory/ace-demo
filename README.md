@@ -1,5 +1,7 @@
 # ace-demo
 
+Basic Amplify Demo
+
 ## [demo](https://master.dx6vwnc4bqqqb.amplifyapp.com)
 
 ## [Back-end API Functions](amplify/backend/function/acedemo46b9fae0/src)
