@@ -29,7 +29,7 @@ loadData();
 <template>
   <main>
     <div class="filter">
-      <button @click="loadData">reload</button>
+      <button @click="loadData">fetch</button>
       <div>Type: {{ picked }}</div>
 
       <form action="">
