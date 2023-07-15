@@ -1,21 +1,7 @@
 <script setup>
-// import { mount } from "object-visualizer";
 import { ObjectVisualizer } from "object-visualizer";
 import "object-visualizer/dist/index.min.css";
-
-import { onMounted, onUpdated } from "vue";
-// import { templateRef } from "@vueuse/core";
 const props = defineProps(["user", "signOut"]);
-
-// const target = templateRef("target");
-// const mountLib = () => mount(props.user, target.value, { expandOnCreatedAndUpdated: () => true });
-
-onMounted(() => {
-  // mountLib();
-});
-onUpdated(() => {
-  // mountLib();
-});
 </script>
 
 <template>

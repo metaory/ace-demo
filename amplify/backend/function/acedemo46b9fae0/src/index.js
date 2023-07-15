@@ -33,7 +33,7 @@ exports.handler = async (event) => {
   const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100)]);
 
   // artificial delay
-  await sleep(3000);
+  await sleep(2000);
 
   return makeResponse({ lineChart, radar, pieChart });
 };

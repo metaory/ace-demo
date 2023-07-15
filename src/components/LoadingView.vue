@@ -2,7 +2,7 @@
   <main>
     <div class="loader">
       <svg viewBox="0 0 80 80">
-        <circle id="test" cx="40" cy="40" r="32"></circle>
+        <circle cx="40" cy="40" r="32"></circle>
       </svg>
     </div>
 
@@ -32,6 +32,7 @@ main {
   align-content: center;
   background-color: hsl(270deg 60% 50% / 90%);
 }
+
 .loader {
   --path: #ea15fc;
   --dot: #c3ee28;
