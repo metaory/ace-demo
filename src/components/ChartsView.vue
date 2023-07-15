@@ -77,11 +77,15 @@ input[type="radio"] {
 }
 
 button {
-  background-color: #856bd3;
+  background-color: hsl(260deg 60% 50% / 90%);
   color: white;
   outline: none;
   border: none;
   border-radius: 12px;
   margin-left: 10px;
+}
+
+button:hover {
+  background-color: hsl(260deg 90% 50% / 90%);
 }
 </style>
