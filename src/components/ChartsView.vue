@@ -1,28 +1,29 @@
 <script setup>
-import { API } from 'aws-amplify'
-import { ref } from 'vue'
+import { API } from "aws-amplify";
+import { ref } from "vue";
+import LoadingView from "./LoadingView.vue";
 
-const chartData = ref([])
-const picked = ref('animal')
+const chartData = ref([]);
+const picked = ref("animal");
+const loading = ref(false);
 
 function loadData() {
-  const apiName = 'aceapi'
-  const path = `/items?type=${picked.value}`
-  console.log('path:', path)
+  loading.value = true;
+  const apiName = "aceapi";
+  const path = `/items?type=${picked.value}`;
   API.get(apiName, path)
     .then((res) => {
-      console.log('@>', res)
-      chartData.value = res.pieChart
+      console.log("@>", res);
+      chartData.value = res.pieChart;
+      loading.value = false;
     })
-    .catch(console.error)
+    .catch((e) => {
+      console.error(e);
+      loading.value = false;
+    });
 }
 
-function onChange() {
-  console.log('ON CHANGE', picked.value)
-  loadData()
-}
-
-loadData()
+loadData();
 </script>
 
 <template>
@@ -30,28 +31,21 @@ loadData()
     <div>
       <button @click="loadData">reload</button>
       <div>Picked: {{ picked }}</div>
+      <h3>{{ loading }}</h3>
 
-      <input
-        v-on:change="onChange"
-        type="radio"
-        id="animal"
-        value="animal"
-        v-model="picked"
-        :checked="true"
-      />
-      <label for="animal">Animals</label>
+      <form action="">
+        <label class="form-control">
+          <input type="radio" value="animal" v-model="picked" v-on:change="loadData" checked />
+          animal
+        </label>
 
-      <input
-        v-on:change="onChange"
-        type="radio"
-        id="profession"
-        value="profession"
-        v-model="picked"
-        :checked="false"
-      />
-      <label for="city">Profession</label>
+        <label class="form-control">
+          <input type="radio" value="profession" v-model="picked" v-on:change="loadData" />
+          profession
+        </label>
+      </form>
     </div>
-
+    <LoadingView v-if="loading" />
     <pie-chart v-if="chartData" :data="chartData"></pie-chart>
   </main>
 </template>
@@ -59,5 +53,9 @@ loadData()
 <style scoped>
 main {
   display: grid;
+}
+
+input[type="radio"] {
+  accent-color: red !important;
 }
 </style>
