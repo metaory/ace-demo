@@ -6,7 +6,7 @@ const chance = new Chance();
  */
 const headers = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "*"
+  "Access-Control-Allow-Headers": "*",
 };
 
 const rnd = (max) => Math.floor(Math.random() * max) + 2;
@@ -16,8 +16,10 @@ const rndArray = (length = 7) => Array.from({ length }).map(() => rnd(100));
 const makeResponse = (data) => ({
   statusCode: 200,
   headers,
-  body: JSON.stringify(data)
+  body: JSON.stringify(data),
 });
+
+const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
 exports.handler = async (event) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
@@ -29,6 +31,9 @@ exports.handler = async (event) => {
 
   const length = rnd(6);
   const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100)]);
+
+  // artificial delay
+  await sleep(3000);
 
   return makeResponse({ lineChart, radar, pieChart });
 };
