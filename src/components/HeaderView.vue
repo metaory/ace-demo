@@ -6,7 +6,9 @@ const props = defineProps(["user", "signOut"]);
 
 <template>
   <main>
-    <h2>Username: {{ user.username }}</h2>
+    <h2>
+      <small>username:</small><code>{{ user.username }}</code>
+    </h2>
     <ObjectVisualizer
       :data="props.user"
       rootName="User"
@@ -19,8 +21,14 @@ const props = defineProps(["user", "signOut"]);
 <style scoped>
 main {
   display: grid;
-  grid-template-columns: 2fr 4fr 1fr;
+  grid-gap: 20px;
+  grid-template-columns: 2fr 4fr auto;
 }
+
+code {
+  color: #ff9900;
+}
+
 button {
   display: inline-block;
   padding: 10px 20px;
@@ -51,7 +59,8 @@ button:active {
 }
 
 .object-visualizer {
-  background-color: #fff;
+  background-color: #ebebeb !important;
   font-family: arial;
+  border-radius: 12px;
 }
 </style>

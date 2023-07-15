@@ -28,10 +28,9 @@ loadData();
 
 <template>
   <main>
-    <div>
+    <div class="filter">
       <button @click="loadData">reload</button>
-      <div>Picked: {{ picked }}</div>
-      <h3>{{ loading }}</h3>
+      <div>Type: {{ picked }}</div>
 
       <form action="">
         <label class="form-control">
@@ -55,7 +54,24 @@ main {
   display: grid;
 }
 
+.filter {
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-flow: column;
+  background-color: #ebebeb;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
 input[type="radio"] {
-  accent-color: red !important;
+  accent-color: #ff5252 !important;
+}
+
+button {
+  background-color: #856bd3;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 12px;
 }
 </style>
