@@ -31,7 +31,8 @@ main {
   grid-auto-flow: column;
   justify-content: center;
   align-content: center;
-  background-color: hsl(270deg 60% 50% / 90%);
+  background-color: hsl(270deg 60% 50% / 70%);
+  backdrop-filter: blur(4px);
 }
 
 .loader {
