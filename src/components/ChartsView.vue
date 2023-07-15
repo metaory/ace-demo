@@ -29,8 +29,8 @@ loadData();
 <template>
   <main>
     <div class="filter">
-      <button @click="loadData">fetch</button>
-      <div>Type: {{ picked }}</div>
+      <button @click="loadData">fetch again</button>
+      <div><em>Type:</em> {{ picked }}</div>
 
       <form action="">
         <label class="form-control">
@@ -54,17 +54,26 @@ main {
   display: grid;
 }
 
+em {
+  color: #7c7c7c;
+}
+
 .filter {
   display: grid;
   grid-gap: 20px;
   grid-auto-flow: column;
-  background-color: #ebebeb;
+  grid-template-columns: 1fr 3fr 1fr;
+  background-color: #ccc;
   border-radius: 12px;
   margin-top: 20px;
+  height: 40px;
+  align-items: center;
 }
 
 input[type="radio"] {
   accent-color: #ff5252 !important;
+  width: 20px;
+  height: 20px;
 }
 
 button {
@@ -73,5 +82,6 @@ button {
   outline: none;
   border: none;
   border-radius: 12px;
+  margin-left: 10px;
 }
 </style>

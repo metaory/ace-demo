@@ -7,7 +7,7 @@ const props = defineProps(["user", "signOut"]);
 <template>
   <main>
     <h2>
-      <small>username:</small><code>{{ user.username }}</code>
+      <em>Username:</em><code>{{ user.username }}</code>
     </h2>
     <ObjectVisualizer
       :data="props.user"
@@ -62,5 +62,10 @@ button:active {
   background-color: #ebebeb !important;
   font-family: arial;
   border-radius: 12px;
+}
+
+em {
+  color: #7c7c7c;
+  font-size: 14px;
 }
 </style>
