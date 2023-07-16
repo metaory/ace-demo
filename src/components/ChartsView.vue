@@ -62,12 +62,14 @@ em {
   display: grid;
   grid-gap: 20px;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr 2fr;
   background-color: #ccc;
   border-radius: 12px;
   margin-top: 20px;
   height: 40px;
   align-items: center;
+  justify-self: center;
+  width: 90vw;
 }
 
 input[type="radio"] {

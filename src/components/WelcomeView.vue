@@ -2,10 +2,14 @@
 import { ref } from "vue";
 defineProps(["user"]);
 const showing = ref(true);
+
+function close(e) {
+  if (e.target.nodeName === "MAIN") showing.value = false;
+}
 </script>
 
 <template>
-  <main v-if="showing">
+  <main v-if="showing" @click="close">
     <section>
       <i
         ><svg
