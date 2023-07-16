@@ -1,4 +1,3 @@
-
 type TestModel @aws_iam @aws_api_key {
   id: ID!
   name: String
@@ -171,6 +170,7 @@ input ModelTestModelFilterInput {
   and: [ModelTestModelFilterInput]
   or: [ModelTestModelFilterInput]
   not: ModelTestModelFilterInput
+  _deleted: ModelBooleanInput
 }
 
 type Query {
@@ -184,6 +184,7 @@ input ModelTestModelConditionInput {
   and: [ModelTestModelConditionInput]
   or: [ModelTestModelConditionInput]
   not: ModelTestModelConditionInput
+  _deleted: ModelBooleanInput
 }
 
 input CreateTestModelInput {
@@ -214,11 +215,11 @@ input ModelSubscriptionTestModelFilterInput {
   name: ModelSubscriptionStringInput
   and: [ModelSubscriptionTestModelFilterInput]
   or: [ModelSubscriptionTestModelFilterInput]
+  _deleted: ModelBooleanInput
 }
 
 type Subscription {
-  onCreateTestModel: TestModel @aws_subscribe(mutations: ["createTestModel"]) @aws_api_key @aws_iam
-  onUpdateTestModel: TestModel @aws_subscribe(mutations: ["updateTestModel"]) @aws_api_key @aws_iam
-  onDeleteTestModel: TestModel @aws_subscribe(mutations: ["deleteTestModel"]) @aws_api_key @aws_iam
+  onCreateTestModel(filter: ModelSubscriptionTestModelFilterInput): TestModel @aws_subscribe(mutations: ["createTestModel"]) @aws_api_key @aws_iam
+  onUpdateTestModel(filter: ModelSubscriptionTestModelFilterInput): TestModel @aws_subscribe(mutations: ["updateTestModel"]) @aws_api_key @aws_iam
+  onDeleteTestModel(filter: ModelSubscriptionTestModelFilterInput): TestModel @aws_subscribe(mutations: ["deleteTestModel"]) @aws_api_key @aws_iam
 }
-

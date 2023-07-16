@@ -378,7 +378,7 @@
         "Name": "aceapi"
       }
     },
-    "aceapiDefault4XXResponse": {
+    "aceapiDefault4XXResponseaca27587": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_4XX",
@@ -393,7 +393,7 @@
         }
       }
     },
-    "aceapiDefault5XXResponse": {
+    "aceapiDefault5XXResponseaca27587": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_5XX",
@@ -408,7 +408,7 @@
         }
       }
     },
-    "DeploymentAPIGWaceapi3611a942": {
+    "DeploymentAPIGWaceapif3005414": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -424,7 +424,11 @@
             }
           ]
         }
-      }
+      },
+      "DependsOn": [
+        "aceapiDefault4XXResponseaca27587",
+        "aceapiDefault5XXResponseaca27587"
+      ]
     }
   }
 }

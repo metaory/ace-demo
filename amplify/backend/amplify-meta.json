@@ -22,11 +22,12 @@
         "Region": "ap-southeast-1",
         "Id": "e9f07a53f6094b5c889243630b0b89d7"
       },
-      "lastPushTimeStamp": "2023-07-11T11:34:00.891Z",
+      "lastPushTimeStamp": "2023-07-16T06:42:47.380Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
         "logicalId": "analyticsacedemo"
-      }
+      },
+      "lastPushDirHash": "RYIHVrm+sJx3nRtMRLvB/emvag4="
     }
   },
   "api": {
@@ -48,11 +49,12 @@
         "RootUrl": "https://x477h82ll9.execute-api.ap-southeast-1.amazonaws.com/dev",
         "ApiId": "x477h82ll9"
       },
-      "lastPushTimeStamp": "2023-07-11T11:34:00.901Z",
+      "lastPushTimeStamp": "2023-07-16T06:42:47.389Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/api/aceapi-cloudformation-template.json",
         "logicalId": "apiaceapi"
-      }
+      },
+      "lastPushDirHash": "lCrpEbGH5byDOtZaM5Nhhqc+h80="
     },
     "acedemo": {
       "dependsOn": [],
@@ -64,11 +66,11 @@
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
               "description": "api key description"
-            }
+            },
+            "authenticationType": "API_KEY"
           }
         },
         "GraphQLAPIIdOutput": "p4ob6hrojbbgfhcxru2vp5gypu",
@@ -77,7 +79,7 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-07-11T11:34:00.903Z",
+      "lastPushTimeStamp": "2023-07-16T06:42:47.391Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiacedemo"
@@ -118,11 +120,12 @@
         "IdentityPoolName": "acedemo_identitypool_b2e0a87d__dev",
         "UserPoolName": "acedemo_userpool_b2e0a87d"
       },
-      "lastPushTimeStamp": "2023-07-11T11:34:00.905Z",
+      "lastPushTimeStamp": "2023-07-16T06:42:47.392Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/auth/acedemo-cloudformation-template.json",
         "logicalId": "authacedemo"
-      }
+      },
+      "lastPushDirHash": "Zcokgg2obfTCTVMmyNMLw3/MVO8="
     }
   },
   "function": {
@@ -137,15 +140,20 @@
         "Name": "acedemo46b9fae0-dev",
         "LambdaExecutionRole": "acedemoLambdaRolebe2ea6a3-dev"
       },
-      "lastPushTimeStamp": "2023-07-11T11:34:00.908Z",
+      "lastPushTimeStamp": "2023-07-16T06:42:47.393Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-acedemo-dev-141516-deployment/amplify-cfn-templates/function/acedemo46b9fae0-cloudformation-template.json",
         "logicalId": "functionacedemo46b9fae0"
       },
       "s3Bucket": {
         "deploymentBucketName": "amplify-acedemo-dev-141516-deployment",
-        "s3Key": "amplify-builds/acedemo46b9fae0-742f614e6866386d7550-build.zip"
-      }
+        "s3Key": "amplify-builds/acedemo46b9fae0-417951586f544c686e7a-build.zip"
+      },
+      "lastBuildTimeStamp": "2023-07-16T05:10:51.469Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-16T05:10:51.694Z",
+      "distZipFilename": "acedemo46b9fae0-417951586f544c686e7a-build.zip",
+      "lastPushDirHash": "QxupD0wLlUolACtaamvynTFLG1o="
     }
   },
   "hosting": {

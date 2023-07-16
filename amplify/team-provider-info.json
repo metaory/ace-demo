@@ -21,7 +21,7 @@
       "function": {
         "acedemo46b9fae0": {
           "deploymentBucketName": "amplify-acedemo-dev-141516-deployment",
-          "s3Key": "amplify-builds/acedemo46b9fae0-742f614e6866386d7550-build.zip"
+          "s3Key": "amplify-builds/acedemo46b9fae0-417951586f544c686e7a-build.zip"
         }
       },
       "hosting": {

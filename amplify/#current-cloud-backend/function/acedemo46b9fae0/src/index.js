@@ -1,17 +1,39 @@
-
+const Chance = require("chance");
+const chance = new Chance();
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "*",
+};
+
+const rnd = (max) => Math.floor(Math.random() * max) + 2;
+
+const rndArray = (length = 7) => Array.from({ length }).map(() => rnd(100));
+
+const makeResponse = (data) => ({
+  statusCode: 200,
+  headers,
+  body: JSON.stringify(data),
+});
+
+const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
+
 exports.handler = async (event) => {
-    console.log(`EVENT: ${JSON.stringify(event)}`);
-    return {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  }, 
-        body: JSON.stringify('Hello fucking world; from Lambda!'),
-    };
+  console.log(`EVENT: ${JSON.stringify(event)}`);
+  const { queryStringParameters } = event;
+  const { type } = queryStringParameters ?? { type: "animal" };
+
+  const lineChart = rndArray();
+  const radar = [rndArray(), rndArray()];
+
+  const length = rnd(6);
+  const pieChart = Array.from({ length }).map(() => [chance[type](), rnd(100)]);
+
+  // artificial delay
+  await sleep(2000);
+
+  return makeResponse({ lineChart, radar, pieChart });
 };

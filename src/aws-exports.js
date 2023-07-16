@@ -5,6 +5,12 @@ const awsmobile = {
     "aws_project_region": "ap-southeast-1",
     "aws_mobile_analytics_app_id": "e9f07a53f6094b5c889243630b0b89d7",
     "aws_mobile_analytics_app_region": "ap-southeast-1",
+    "Analytics": {
+        "AWSPinpoint": {
+            "appId": "e9f07a53f6094b5c889243630b0b89d7",
+            "region": "ap-southeast-1"
+        }
+    },
     "aws_cloud_logic_custom": [
         {
             "name": "aceapi",
